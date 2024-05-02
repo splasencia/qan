@@ -26,6 +26,11 @@ const Link = mongoose.model('Link', new mongoose.Schema({
     description: String
 }));
 
+app.get('/', (req, res) => {
+  res.redirect('/links');
+});
+
+
 // Endpoint para obtener los enlaces
 app.get('/links', async (req, res) => {
     const links = await Link.find();
