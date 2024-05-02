@@ -20,12 +20,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
-
-      - name: Load project
-        uses: ./
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-      
+    
       - name: npm install, build, and test
         run: |
           npm install
