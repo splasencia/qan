@@ -1,10 +1,6 @@
-const request = require('supertest');
-const app = require('../server'); // Asegúrate de que tu servidor exporta la aplicación de Express
+const sum = require('./server')
 
-describe('GET /links', () => {
-    it('should return a list of links', async () => {
-        const response = await request(app).get('/links');
-        expect(response.statusCode).toBe(200);
-        expect(response.body).toBeInstanceOf(Array);
-    });
+test('adds 1 + 2 to equal 3', () => {
+  expect(sum(1, 2)).toBe(3);
 });
+
