@@ -6,6 +6,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+module.exports = app; // Esto permite que supertest inicie el servidor para las pruebas
+
 // Usar la cadena de conexión desde las variables de entorno
 const mongoConnectionString = process.env.MONGODB_CONNECTION_STRING;
 

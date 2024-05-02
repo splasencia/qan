@@ -16,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/splasencia/qan/issues"
   },
-  "homepage": "https://github.com/splasencia/qan#readme"
+  "homepage": "https://github.com/splasencia/qan#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "import-local": "^3.1.0",
+    "mongoose": "^8.3.3"
+  },
+  "devDependencies": {
+    "jest": "^27.0.0",
+    "supertest": "^7.0.0"
+  }
 }
