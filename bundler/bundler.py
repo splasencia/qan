@@ -63,7 +63,9 @@ def bundle_solidity_contracts(main_file_path, output_file_path, node_modules_pat
 
     bundled_content = re.sub(r'pragma\s+solidity\s+[^;]+;', '', bundled_content)
 
-    final_content = pragma_statement + '\n' + bundled_content
+    cleaned_content = re.sub(r'(pragma\s+solidity\s+[^;]+;|//\s*SPDX-License-Identifier:[^\n]*\n)', '', bundled_content)
+
+    final_content = pragma_statement + '\n' + cleaned_content
 
     with open(output_file_path, 'w') as f:
         f.write(final_content)
