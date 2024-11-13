@@ -5,6 +5,8 @@ set -e
 # Input and output directories
 CONTRACTS_DIR="/contracts"
 OUTPUT_DIR="/bundled_contracts"
+BUNDLER="/qan-scripts/bundler"
+MODULES_PATH="/app/node_modules"
 
 # Ensure output directory exists
 mkdir -p $OUTPUT_DIR
@@ -15,7 +17,7 @@ for contract in $CONTRACTS_DIR/*.sol; do
     output_file="$OUTPUT_DIR/$(basename $contract)"
 
     # Run the bundler script
-    python3 /app/bundler.py "$contract" "$output_file" --node-modules-path /app/node_modules
+    python3 $BUNDLER/bundler.py "$contract" "$output_file" --node-modules-path $MODULES_PATH
     echo "Bundled $(basename $contract) -> $output_file"
 done
 
