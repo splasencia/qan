@@ -18,8 +18,8 @@ for contract in $CONTRACTS_DIR/*.sol; do
 
     # Run the bundler script
     python3 $BUNDLER/bundler.py "$contract" "$output_file" --node-modules-path $MODULES_PATH
-    // echo "Bundled $(basename $contract) -> $output_file"
+    # echo "Bundled $(basename $contract) -> $output_file"
 done
 
-//echo "All contracts bundled successfully."
+#echo "All contracts bundled successfully."
 
