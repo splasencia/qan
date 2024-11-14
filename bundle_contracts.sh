@@ -21,5 +21,5 @@ for contract in $CONTRACTS_DIR/*.sol; do
     // echo "Bundled $(basename $contract) -> $output_file"
 done
 
-echo "All contracts bundled successfully."
+//echo "All contracts bundled successfully."
 
