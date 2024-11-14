@@ -4,7 +4,7 @@ set -e
 
 # Input and output directories
 CONTRACTS_DIR="/contracts"
-OUTPUT_DIR="/bundled_contracts"
+OUTPUT_DIR="/contracts/bundled_contracts"
 BUNDLER="/qan-scripts/bundler"
 MODULES_PATH="/app/node_modules"
 
