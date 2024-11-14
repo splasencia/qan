@@ -58,6 +58,9 @@ def bundle_solidity_contracts(main_file_path, output_file_path, node_modules_pat
     with open(main_file_path, 'r') as f:
         pragma_file = f.read()
 
+    # Define the SPDX license identifier
+    spdx_license = "// SPDX-License-Identifier: MIT\n"
+    
     pragma_match = re.search(r'pragma\s+solidity\s+[^;]+;', pragma_file)
     pragma_statement = pragma_match.group(0) if pragma_match else ''
 
@@ -65,7 +68,7 @@ def bundle_solidity_contracts(main_file_path, output_file_path, node_modules_pat
 
     cleaned_content = re.sub(r'(pragma\s+solidity\s+[^;]+;|//\s*SPDX-License-Identifier:[^\n]*\n)', '', bundled_content)
 
-    final_content = pragma_statement + '\n' + cleaned_content
+    final_content = spdx_license + pragma_statement + '\n' + cleaned_content
 
     with open(output_file_path, 'w') as f:
         f.write(final_content)
