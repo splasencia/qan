@@ -41,7 +41,7 @@ def resolve_imports(file_path, resolved_files=set(), base_dir='', dependency_dir
 
         import_path = os.path.normpath(import_path)
         imported_content = resolve_imports(import_path, resolved_files, os.path.dirname(import_path), dependency_dir)
-        content = re.sub(f'import\s+(?:\{{[^}}]+\}}\s+from\s+)?["\']{re.escape(match)}["\'];', imported_content, content)
+        content = re.sub(rf'import\s+(?:\{{[^}}]+\}}\s+from\s+)?["\']{re.escape(match)}["\'];', imported_content, content)
 
     return content
 
